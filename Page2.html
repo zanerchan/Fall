@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lighting Company</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+       <!-- Header -->
+    <header class="site-header">
+        <div class="logo">ZanerChan Stories</div>
+        
+        <nav class="main-nav">
+            <ul>
+                <a href="page2.html" target="_self"  rel="noreferrer">Information</a>
+                <a href="page3.html" target="_self"  rel="noreferrer">Stories</a>
+                <a href="page4.html" target="_self"  rel="noreferrer">Past Projects</a>
+                <a href="page5.html" target="_self"  rel="noreferrer">Driver Data Sheet
+                <a href="page6.html" target="_self"  rel="noreferrer">Bio</a>
+                <a href="page7.html" target="_self"  rel="noreferrer">Social Media</a>
+                <a href="New Page.html" target="_self"  rel="noreferrer">Return to Home Page</a>
+            </ul>
+        
+            </nav>
+    </header>
+
+
+<section class="content-section" id="excel-finder-viewer">
+  <h2>Excel Viewer</h2>
+
+  <!-- Controls -->
+  <div class="efv-controls">
+    <!-- Folder picker (modern Chromium) -->
+    <button id="pickFolder" class="btn">Pick a Folder</button>
+
+    <!-- Fallback: pick a folder (webkitdirectory) or multiple files -->
+    <label class="btn">
+      Pick Files / Folder
+      <input type="file" id="pickFiles" accept=".xlsx,.xls,.xlsb,.csv"
+             multiple webkitdirectory style="display:none">
+    </label>
+    <!-- Driver Filters -->
+<div id="driverFilters" class="efv-filters" hidden>
+  <div class="flt-row">
+    <label>Model:</label>
+    <input type="text" id="fltModel" placeholder="e.g., DR-120 or LX-" />
+  </div>
+  <div class="flt-row">
+    <label>Input Voltage (VAC):</label>
+    <input type="number" id="fltVinMin" placeholder="min" style="width:90px" />
+    <span>–</span>
+    <input type="number" id="fltVinMax" placeholder="max" style="width:90px" />
+  </div>
+  <div class="flt-row">
+    <label>Output Current (mA):</label>
+    <input type="number" id="fltIoutMin" placeholder="min" style="width:90px" />
+    <span>–</span>
+    <input type="number" id="fltIoutMax" placeholder="max" style="width:90px" />
+  </div>
+  <div class="flt-row">
+    <label>Dimming:</label>
+    <select id="fltDimming">
+      <option value="">Any</option>
+      <option>0–10V</option>
+      <option>DALI</option>
+      <option>DALI Type 8</option>
+      <option>Phase</option>
+      <option>PWM</option>
+    </select>
+  </div>
+  <div class="flt-row">
+    <label>PF ≥</label>
+    <input type="number" step="0.01" id="fltPF" placeholder="0.90" style="width:90px" />
+    <label style="margin-left:12px">THD ≤</label>
+    <input type="number" id="fltTHD" placeholder="20" style="width:90px" />
+  </div>
+  <div class="flt-actions">
+    <button id="btnApplyFilters" class="btn-secondary">Apply Filters</button>
+    <button id="btnClearFilters" class="btn">Clear</button>
+    <select id="sortBy" title="Sort by">
+      <option value="">Sort by…</option>
+      <option value="model">Model</option>
+      <option value="input_voltage">Input Voltage</option>
+      <option value="i_out">Output Current</option>
+      <option value="pf">PF</option>
+      <option value="thd">THD</option>
+    </select>
+  </div>
+</div>
+
+<!-- Where the driver summary table will render -->
+<div id="driverSummary" class="table-wrap"></div>
+
+    <!-- Optional: load a default workbook you include in /data -->
+    <button id="loadDefault" class="btn-secondary">Load Default Workbook</button>
+  </div>
+
+  <!-- Search box -->
+  <div class="efv-search">
+    <input type="text" id="searchBox" placeholder="Search filename… (e.g., spec, photometry)" />
+  </div>
+
+  <!-- Results -->
+  <div id="fileCount" class="muted"></div>
+  <ul id="fileResults" class="efv-list" aria-live="polite"></ul>
+
+  <!-- Viewer -->
+  <div id="excelInfo" class="muted" style="margin-top:12px;"></div>
+  <div id="excelTableWrap" class="table-wrap"></div>
+
+  <!-- Local libraries & logic -->
+  <script src="js/xlsx.full.min.js"></script>
+  <script src="js/excel-finder.js"></script>
+</section>
+    
+
+    <!-- Featured projects -->
+    <section class="projects">
+        <h2>Featured Projects</h2>
+        <div class="project-grid">
+            <article class="project-card">
+                <h3>City Park Renovation</h3>
+                <p>Energy‑efficient lighting for public spaces.</p>
+            </article>
+            <article class="project-card">
+                <h3>Corporate Campus</h3>
+                <p>Uniform, glare‑controlled illumination for pathways.</p>
+            </article>
+            <article class="project-card">
+                <h3>Waterfront Promenade</h3>
+                <p>Durable fixtures for harsh environments.</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-columns">
+            <div>
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">News</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Downloads</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <p>1234 Lighting Way<br>Hillsboro, OR</p>
+                <p>Email: info@lightco.com</p>
+            </div>
+        </div>
+        <p class="footer-bottom">© 2026 LIGHTCO. All rights reserved.</p>
+    </footer>
+</body>
+</html>
