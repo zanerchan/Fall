@@ -1,0 +1,106 @@
+body {
+  background-image: url("zimaos02.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-attachment: no-repeat;
+    background-attachment: fixed;
+;
+}
+body {
+    color: rgb(149, 109, 240);
+}
+body::before {
+  content: "";
+  position: scroll;
+    inset: 0;                 /* top:0 right:0 bottom:0 left:0 */
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.45),
+    rgba(0,0,0,0.45)
+  );                        /* uniform dark overlay */
+  pointer-events: none;     /* let clicks pass through */
+  z-index: 0;
+}
+
+/* Ensure your page content sits above the overlay */
+nav, main, footer, header {
+  position: relative;
+  z-index: 1;
+  color: #000000;              /* readable on dark overlay */
+}
+
+.logo {
+    width: 7em;
+    height: portion;  
+    object-fit: contain;   /* keeps proportions */
+   
+}
+header {
+    display: flex;
+    align-items: top;
+    text-align: top;
+    text-align: center;
+    justify-content:2em;
+    padding: 1.5em;
+    background-color: #3473d7;
+}
+banner {
+    text-align: center;
+    text-align: top;
+    font-size: 1em;
+}
+
+/* Base page color on dark backgrounds */
+body {
+  color: #000000;
+  line-height: 1.6;
+}
+
+/* Bio section styling */
+.section-bio {
+  max-width: 70ch;               /* comfortable reading width */
+  margin: 4rem auto;             /* center + vertical spacing */
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.4);/* subtle translucent panel for readability */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  backdrop-filter: blur(6px);    /* nice glass effect */
+}
+
+/* Section heading */
+.section-bio h2 {
+  margin: 0 0 1rem;
+  font-size: clamp(1.5rem, 2vw + 0.5rem, 2rem);
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+/* Paragraph rhythm */
+.section-bio p + p {
+  margin-top: 1rem;
+}
+
+/* Optional: link appearance within bio */
+.section-bio a {
+  color: #c7e0ff;                /* soft accent */
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.section-bio a:hover {
+  color: #e2f0ff;
+}
+
+/* Smooth in-page scrolling for anchor links like #bio */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Nav link style (optional, if you want white nav links) */
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+nav a:hover {
+  color: #ddd;
+}
